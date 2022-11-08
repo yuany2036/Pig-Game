@@ -68,6 +68,7 @@ function gameOver() {
 }
 
 function rollButtonEvent() {
+    diceImg.removeAttribute("style");
     const roll = Math.ceil(Math.random() * 6);
     diceImg.setAttribute("src", `dice-${roll}.png`);
     if (roll === 1) {
@@ -107,6 +108,7 @@ function reset() {
     if (!activePlayer()) {
         switchPlayer();
     }
+    diceImg.setAttribute("style", "display: none");
     playerOne.classList.remove("player--winner");
     playerTwo.classList.remove("player--winner");
     // ! Event listener for pressing the roll button
